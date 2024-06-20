@@ -1,0 +1,9 @@
+Local changes(changes to the files that you make on your comp)-->1. they are moved to the staging area--> 2.committed locally--> 3.get it onto the GitHub website
+
+
+   git status 
+1. git add .  
+2. git commit
+3. git push
+
+
