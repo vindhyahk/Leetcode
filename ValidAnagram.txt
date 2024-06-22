@@ -1,0 +1,11 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+       return sorted(s)==sorted(t)
+
+    """ for i in list(s):
+            if i in list(t):
+                return True //checks if every ele in s in t but not if any  extra element in t
+    
+        return False""" 
+        
+       
