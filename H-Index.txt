@@ -1,0 +1,9 @@
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        citations=sorted(citations, reverse=True)
+
+        for index, cita in enumerate(citations):
+            if index >= cita:
+                return index
+        else: 
+            return len(citations)
