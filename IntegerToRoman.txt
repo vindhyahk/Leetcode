@@ -1,0 +1,28 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        
+        """ 3749>1000   M
+            2749>1000   M
+            1749>1000   M
+            749>500     D
+            249>100     C
+            149>100     C
+            49>40       XL
+            9           IX
+            0
+        """
+
+        roman = [
+            ("M", 1000), ("CM", 900), ("D", 500), ("CD", 400),
+            ("C", 100), ("XC", 90), ("L", 50), ("XL", 40),
+            ("X", 10), ("IX", 9), ("V", 5), ("IV", 4), ("I", 1)
+        ]
+
+        res = []
+
+        for symbol, value in roman:
+            while num >= value:
+                res.append(symbol)
+                num -= value
+        
+        return "".join(res)
