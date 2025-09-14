@@ -1,0 +1,25 @@
+class Solution:
+    def setZeroes(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+
+        col_dict={}
+        row_dict={}
+
+        for i in range(0, len(matrix)):
+            for j in range(0, len(matrix[0])):
+                if matrix[i][j]==0:
+                    if i not in col_dict:
+                        col_dict[i]=1		#mark row i
+
+                    if j not in row_dict:
+                        row_dict[j]=1		#mark row j
+        
+
+        #for changing all marked to zeroes
+        for i in range(0, len(matrix)):
+            for j in range(0, len(matrix[0])):
+                if i in col_dict or j in row_dict:
+                    matrix[i][j]=0
+                    
