@@ -1,0 +1,21 @@
+class Solution:
+    def getSecondLargest(self, arr):
+        # Code Here
+        n=len(arr)
+        if n<2:
+            return -1
+        
+        maxf=-1
+        second=-1
+        
+        for num in arr:
+            if num > maxf:
+                second=maxf     # store ele as secondlargest
+                maxf=num        #store curr max in maxf
+            elif num>second and num!=maxf:  
+                second=num      		#to store prev val<maxf but greater than prev second
+                
+        if second==-1:
+            return -1
+        else:
+            return second
