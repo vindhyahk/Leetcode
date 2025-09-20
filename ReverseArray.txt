@@ -1,0 +1,16 @@
+class Solution:
+    def reverseArray(self, arr):
+        # code here
+        l=0
+        r= len(arr)-1
+        
+        while l < r:
+            
+            arr[l], arr[r]= arr[r], arr[l]  #swap the elements for position
+            
+            l+=1    #update l pointer 
+            r-=1    #update r pointer 
+            
+        return arr
+        
+#T.C : O(n) S.C: O(1)
