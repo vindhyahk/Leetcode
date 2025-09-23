@@ -1,12 +1,13 @@
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         words=s.split()
-        if len(pattern)!=len(words):
+
+        if len(pattern)!=len(words):	#check if length of words and pattern equal
             return False
 
-        chartow,wtochar={},{}
+        chartow,wtochar={},{}		#create 2 dictionaries
 
-        for c,w in zip(pattern,words):
+        for c,w in zip(pattern, words):
             
             if c in chartow and chartow[c]!=w: 
                 return False
