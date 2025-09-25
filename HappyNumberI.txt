@@ -1,0 +1,17 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+	
+	seen={} 	#to check if the number is seen or not yet
+	sumx=0
+	
+	for i in str(n):
+		sumx+= (int(i)**2)
+	
+	if sumx==1:
+		return True
+	if sumx not in seen:
+		seen[sumx]=1
+	else:
+		return False
+	
+	n= sumx

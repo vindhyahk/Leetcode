@@ -1,0 +1,31 @@
+class Solution:
+    def nextPermutation(self, arr):
+        
+        n = len(arr)
+        
+        pivot = -1
+        
+        #compute the pivot element as, if ele1>ele2
+        for i in range( n-2, -1, -1 ):
+            if arr[i] < arr[i+1]:
+                pivot = i
+                break
+        
+        #incase pivot does not exist, ie. entire arr is descending order
+        if pivot == -1:
+            arr.reverse()
+            return
+        
+        #find the element just greater than the pivot and swap
+        for i in range(n-1, pivot, -1):
+            if arr[i] > arr[pivot]:
+                arr[i], arr[pivot]=arr[pivot] , arr[i]
+                break
+        
+        #reverse the rest of the array after the pivot ie. from pivot+1 onwards
+        l=pivot+1
+        r=n-1
+        while l < r:
+            arr[l], arr[r]= arr[r], arr[l]
+            l+=1
+            r-=1
