@@ -1,0 +1,16 @@
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        #sort by start time and then merge
+        intervals.sort(key = lambda i : i[0])
+        output = [intervals[0]]     #set op to first interval
+
+        for start, end in intervals[1:]:
+            lastEnd = output[-1][1]     #accesses the end value of that last interval
+
+            if start <= lastEnd:    # => they are overlapping
+                output[-1][1] = max(lastEnd, end)
+            else:
+                output.append([start, end])
+        return output
+
+        # T.C : O(nlogn)
