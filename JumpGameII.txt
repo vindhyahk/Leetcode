@@ -1,14 +1,13 @@
 class Solution:
     def jump(self, nums: List[int]) -> int:
-        res=0
+        res = 0
         l=r=0
-
+        #BFS on 1D array
         while r < len(nums)-1:
-            furthermost=0
+            farthest = 0
             for i in range(l, r+1):
-                furthermost=max (furthermost, nums[i]+i)
-
-            l=r
-            r=furthermost
+                farthest = max(farthest, i + nums[i])
+            l = r+1
+            r= farthest
             res+=1
         return res
